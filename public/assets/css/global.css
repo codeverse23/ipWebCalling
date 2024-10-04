@@ -1,0 +1,23 @@
+.header .mobile-user-menu{
+    top: 15px !important;
+}
+
+.d-block{
+    display: block;
+}
+
+.d-none{
+    display: none;
+}
+
+.show-profile-model{
+    position: absolute;
+    inset: 0px 0px auto auto;
+    margin: 0px; 
+    transform:translate(0px, -40px) !important;
+   /* display: block; */
+}
+
+.show-profile-model-mobile{
+    transform:translate(-130px, 15px) !important;
+}
