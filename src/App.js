@@ -1,15 +1,16 @@
-
-import './App.css';
+import "./App.css";
 import { RouterProvider } from "react-router-dom";
-import MainRouter from './components/Router/MainRouter';
+import PagesIndex from "./components/Pages/PagesIndex";
 import router from "./components/Router/MainRouter";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-<RouterProvider router={router} />
+    <>
+      <RouterProvider router={router} />
+      <PagesIndex.ToastContainer />
+    </>
   );
 }
 
 export default App;
-
-

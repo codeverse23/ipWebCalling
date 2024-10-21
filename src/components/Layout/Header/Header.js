@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
-import { PagesIndex } from '../../Pages/PagesIndex';
-import { Link, useNavigate } from 'react-router-dom';
+import PagesIndex from '../../Pages/PagesIndex';
 
 const Header = ({toggleSidebar}) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const[showNotification,setShowNotification]=useState(false)
-const navigate = useNavigate()
+  const [isOpen, setIsOpen] = PagesIndex.useState(false);
+  const[showNotification,setShowNotification]= PagesIndex.useState(false)
+const navigate = PagesIndex.useNavigate()
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
     setShowNotification(false)
@@ -17,6 +15,7 @@ const toggleNotification = ()=>{
 }
   const handleLogout = ()=>{
 navigate("/login")
+localStorage.removeItem("token")
   }
   return (
     <div className="header">
@@ -32,7 +31,7 @@ navigate("/login")
           <a href="index.html" className="logo-small">
             <img src="assets/img/logo-small.svg" alt="Logo" />
           </a>
-          <a id="toggle_btn" href="javascript:void(0);">
+          <a id="toggle_btn" href="#">
             <i className="ti ti-arrow-bar-to-left" />
           </a>
         </div>
@@ -47,7 +46,7 @@ navigate("/login")
           <ul className="nav user-menu">
             <li className="nav-item nav-search-inputs me-auto">
               <div className="top-nav-search">
-                <a href="javascript:void(0);" className="responsive-search">
+                <a href="#" className="responsive-search">
                   <i className="fa fa-search" />
                 </a>
         
@@ -152,7 +151,7 @@ navigate("/login")
                   <a href="activities.html" className="view-link">
                     View all
                   </a>
-                  <a href="javascript:void(0);" className="clear-link">
+                  <a href="#" className="clear-link">
                     Clear all
                   </a>
                 </div>
@@ -174,15 +173,15 @@ navigate("/login")
               </a>
               <div className={`dropdown-menu menu-drop-user ${isOpen ? 'show show-profile-model' : ''}`}>
                 <div className="profilename">
-                  <Link className="dropdown-item" to="/">
+                  <PagesIndex.Link className="dropdown-item" to="/">
                     <i className="ti ti-layout-2" /> Dashboard
-                  </Link>
-                  <Link className="dropdown-item" to="/profile">
+                  </PagesIndex.Link>
+                  <PagesIndex.Link className="dropdown-item" to="/profile">
                     <i className="ti ti-user-pin" /> My Profile
-                  </Link>
-                  <Link className="dropdown-item" to="#" onClick={()=>handleLogout()}>
+                  </PagesIndex.Link>
+                  <PagesIndex.Link className="dropdown-item" to="#" onClick={()=>handleLogout()}>
                     <i className="ti ti-lock" /> Logout
-                  </Link>
+                  </PagesIndex.Link>
                 </div>
               </div>
             </li>
@@ -190,7 +189,7 @@ navigate("/login")
         </div>
         <div className="dropdown mobile-user-menu">
           <a
-            href="javascript:void(0);"
+            href="#"
             className="nav-link dropdown-toggle"
             // data-bs-toggle="dropdown"
             // aria-expanded="false"
@@ -200,15 +199,15 @@ navigate("/login")
           </a>
           <div className={`dropdown-menu menu-drop-user ${isOpen ? 'show show-profile-model-mobile' : ''}`}>
    
-            <Link className="dropdown-item" to="/">
+            <PagesIndex.Link className="dropdown-item" to="/">
                     <i className="ti ti-layout-2" /> Dashboard
-                  </Link>
-                  <Link className="dropdown-item" to="/profile">
+                  </PagesIndex.Link>
+                  <PagesIndex.Link className="dropdown-item" to="/profile">
                     <i className="ti ti-user-pin" /> My Profile
-                  </Link>
-                  <Link className="dropdown-item" to="#" onClick={()=>handleLogout()}>
+                  </PagesIndex.Link>
+                  <PagesIndex.Link className="dropdown-item" to="#" onClick={()=>handleLogout()}>
                     <i className="ti ti-lock" /> Logout
-                  </Link>
+                  </PagesIndex.Link>
           </div>
         </div>
       </div>

@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import { MenuItems } from "./SidebarData";
 
-
 const Sidebar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
-console.log(activeMenu,"activeMenu")
-
-const toggleMenu = (id) => {
-  setActiveMenu(activeMenu === id ? null : id);
-};
-
+ 
+  const toggleMenu = (id) => {
+    setActiveMenu(activeMenu === id ? null : id);
+  };
 
   return (
     <div className="sidebar" id="sidebar">
@@ -31,34 +28,39 @@ const toggleMenu = (id) => {
             </li>
           </ul>
           <ul>
-          {MenuItems.map((menuItem) => (
-        <li key={menuItem.id}>
-     
-          <h6 className="submenu-hdr">{menuItem.header}</h6>
-          <ul>
-            {menuItem.submenu.map((submenuItem) => (
-              <li key={submenuItem.id} className="submenu">
-                <a href="javascript:void(0);" 
-                className={activeMenu === submenuItem.id ? 'active subdrop' : ''}
-                onClick={() => toggleMenu(submenuItem.id)}
-                 >
-                  <i className={submenuItem.iconClass} />
-                  <span>{submenuItem.title}</span>
-                  <span className="menu-arrow" />
-                </a>
-                <ul className={activeMenu === submenuItem.id ? 'd-block ' : ''}>
-                  {submenuItem.menu.map((subMenuLink) => (
-                    <li key={subMenuLink.id}>
-                      <a href={subMenuLink.link}>{subMenuLink.title}</a>
+            {MenuItems.map((menuItem) => (
+              <li key={menuItem.id}>
+                <h6 className="submenu-hdr">{menuItem.header}</h6>
+                <ul>
+                  {menuItem.submenu.map((submenuItem) => (
+                    <li key={submenuItem.id} className="submenu">
+                      <a
+                        href="#"
+                        className={
+                          activeMenu === submenuItem.id ? "active subdrop" : ""
+                        }
+                        onClick={() => toggleMenu(submenuItem.id)}
+                      >
+                        <i className={submenuItem.iconClass} />
+                        <span>{submenuItem.title}</span>
+                        <span className="menu-arrow" />
+                      </a>
+                      <ul
+                        className={
+                          activeMenu === submenuItem.id ? "d-block " : ""
+                        }
+                      >
+                        {submenuItem.menu.map((subMenuLink) => (
+                          <li key={subMenuLink.id}>
+                            <a href={subMenuLink.link}>{subMenuLink.title}</a>
+                          </li>
+                        ))}
+                      </ul>
                     </li>
                   ))}
                 </ul>
               </li>
             ))}
-          </ul>
-        </li>
-      ))}
-          
           </ul>
         </div>
       </div>

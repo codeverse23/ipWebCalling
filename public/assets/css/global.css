@@ -21,3 +21,9 @@
 .show-profile-model-mobile{
     transform:translate(-130px, 15px) !important;
 }
+
+.error-text{
+    margin-top: .25rem;
+    font-size: .875em;
+    color: #dc3545 !important;
+}

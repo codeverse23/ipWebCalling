@@ -1,4 +1,4 @@
-export const MenuItems = [
+const MenuItems = [
   {
     id: 1,
     header: "MAIN MENU",
@@ -31,9 +31,10 @@ export const MenuItems = [
         iconClass: "ti ti-user-up",
         menu: [
           { id: 1, title: "Companies", link: "#" },
-         
         ],
       },
     ],
   },
 ];
+
+export {MenuItems}

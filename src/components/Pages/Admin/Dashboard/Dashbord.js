@@ -32,7 +32,7 @@ const Dashbord = () => {
                           <i className="ti ti-refresh-dot" />
                         </a>
                         <a
-                          href="javascript:void(0);"
+                          href="#"
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           data-bs-original-title="Collapse"
@@ -61,16 +61,16 @@ const Dashbord = () => {
                     <a
                       className="dropdown-toggle"
                       data-bs-toggle="dropdown"
-                      href="javascript:void(0);"
+                      href="#"
                     >
                       <i className="ti ti-calendar-check me-2" />
                       Last 30 days
                     </a>
                     <div className="dropdown-menu dropdown-menu-end">
-                      <a href="javascript:void(0);" className="dropdown-item">
+                      <a href="#" className="dropdown-item">
                         Last 15 days
                       </a>
-                      <a href="javascript:void(0);" className="dropdown-item">
+                      <a href="#" className="dropdown-item">
                         Last 30 days
                       </a>
                     </div>
